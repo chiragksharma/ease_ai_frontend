@@ -5,8 +5,8 @@
   left: 0;
   right: 0;
   text-align: center;
-  height: 100%;
-  padding: 10px;
+  /* height: 100%; */
+  /* padding: 10px; */
   background-color: #282c34;
 }
 
@@ -42,4 +42,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.suggestions{
+  padding: 15px;
 }

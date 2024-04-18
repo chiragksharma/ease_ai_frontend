@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+import packageJson from './package.json' assert { type: 'json' };
 
 /**
  * After changing, please reload the extension at `chrome://extensions`
@@ -8,13 +8,9 @@ const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const manifest = {
   manifest_version: 3,
   default_locale: 'en',
-  /**
-   * if you want to support multiple languages, you can use the following reference
-   * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization
-   */
-  name: '__MSG_extensionName__',
+  name: packageJson.name,
   version: packageJson.version,
-  description: '__MSG_extensionDescription__',
+  description: packageJson.description,
   permissions: ['storage', 'sidePanel'],
   side_panel: {
     default_path: 'src/pages/sidepanel/index.html',
@@ -23,33 +19,39 @@ const manifest = {
   background: {
     service_worker: 'src/pages/background/index.js',
     type: 'module',
+    matches: ['<all_urls>'],
   },
   action: {
     default_popup: 'src/pages/popup/index.html',
     default_icon: 'icon-34.png',
   },
-  chrome_url_overrides: {
-    newtab: 'src/pages/newtab/index.html',
-  },
+  // chrome_url_overrides: {
+  //   newtab: 'src/pages/newtab/index.html',
+  // },
   icons: {
     128: 'icon-128.png',
   },
   content_scripts: [
     {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['src/pages/contentInjected/index.js'],
-      // KEY for cache invalidation
+      matches: ['<all_urls>'],
+      js: ['src/pages/content/index.js'],
       css: ['assets/css/contentStyle<KEY>.chunk.css'],
-    },
-    {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['src/pages/contentUI/index.js'],
     },
   ],
   devtools_page: 'src/pages/devtools/index.html',
   web_accessible_resources: [
     {
-      resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-128.png', 'icon-34.png'],
+      resources: [
+        'assets/js/*.js',
+        'assets/css/*.css',
+        'assets/svg/*.svg',
+        'assets/gif/*.gif',
+        '128x128.png',
+        '32x32.png',
+        "assets/fonts/*.woff2",
+        "assets/fonts/*.woff",
+        "assets/fonts/*.ttf"
+      ],
       matches: ['*://*/*'],
     },
   ],
