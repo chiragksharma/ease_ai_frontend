@@ -1,1 +1,4 @@
-import('@pages/content/ui/root');
+
+import('@pages/content/ui');
+import('@pages/content/ui/components/IconButton');
+import('@pages/content/injected');

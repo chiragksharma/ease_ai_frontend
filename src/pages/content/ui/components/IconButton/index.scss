@@ -1,0 +1,73 @@
+img#send {
+    width: 19px;
+    height: 18px;
+  }
+  
+  img#file {
+    width: 19px;
+    height: 18px;
+  }
+  
+  img#rec {
+    width: 36px;
+    height: 36px;
+  }
+  
+  img#mic {
+    width: 36px;
+    height: 36px;
+  }
+  
+  button#google:hover {
+    border-color: transparent;
+    transform: scale(1.1);
+  }
+  
+  button#google:focus,
+  button#google:focus-visible,
+  button#GenerateBtn:focus,
+  button#GenerateBtn:focus-visible,
+  button#RefreshBtn:focus,
+  button#RefreshBtn:focus-visible,
+  button#AcceptBtn:focus,
+  button#AcceptBtn:focus-visible,
+  button#closeCustomReply:focus,
+  button#closeCustomReply:focus-visible {
+    outline: none;
+  }
+  
+  button#google {
+    transition: transform 0.2s ease;
+  }
+  
+  img#instantReply {
+    transition: background-color 0.3s ease;
+  }
+  
+  button#instantReply:hover,
+  button#customReply:hover,
+  button#chatWithAi:hover,
+  button#GenerateBtn:hover,
+  button#AcceptBtn:hover,
+  button#RefreshBtn:hover,
+  button#closeCustomReply:hover {
+    border-color: transparent;
+  }
+  
+  img#instantReply:hover,
+  img#customReply:hover,
+  img#chatWithAi:hover {
+    border-radius: 4px;
+    background: var(--dark-80, #161623);
+  }
+  
+  button#GenerateBtn {
+    padding: 0;
+    margin: 0;
+  }
+  
+  img#closeCustomReply {
+    width: 14px;
+    height: 14px;
+  }
+  
