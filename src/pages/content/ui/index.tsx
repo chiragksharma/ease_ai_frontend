@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import App from '@pages/content/ui/app';
 import refreshOnUpdate from 'virtual:reload-on-update-in-view';
-import CustomChakraProvider from '@pages/content/ui/CustomChakraProvider';
-import EmotionCacheProvider from '@pages/content/ui/EmotionCacheProvider';
+
 
 refreshOnUpdate('pages/content');
 
@@ -25,9 +24,6 @@ shadowRoot.appendChild(rootIntoShadow);
 
 createRoot(rootIntoShadow).render(
     // Add Providers
-    <EmotionCacheProvider rootId={root.id}>
-      <CustomChakraProvider shadowRootId={rootIntoShadow.id}>
-        <App />
-      </CustomChakraProvider>
-    </EmotionCacheProvider>,
+   
+        <App />,
   );

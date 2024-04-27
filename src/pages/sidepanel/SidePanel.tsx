@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '@assets/img/logo.svg';
-import '@pages/sidepanel/SidePanel.css';
+// import css from '@pages/sidepanel/SidePanel.scss';
+// import '@pages/sidepanel/SidePanel.css';
 import useStorage from '@src/shared/hooks/useStorage';
 import exampleThemeStorage from '@src/shared/storages/exampleThemeStorage';
 import withSuspense from '@src/shared/hoc/withSuspense';
@@ -19,6 +20,7 @@ const SidePanel = () => {
       style={{
         backgroundColor:'white',
       }}>
+        {/* <style>{css}</style> */}
         <header>
         <Header/>
         <div className='suggestions'>

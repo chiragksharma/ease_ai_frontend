@@ -1,6 +1,6 @@
 // Suggestions.js
 import React from 'react';
-import { SimpleGrid } from '@chakra-ui/react';
+
 import SuggestionCard from '@pages/sidepanel/components/suggestion-cards/suggestion-card';
 import Youtubeicon from '@assets/img/youtube-icon-colorful.svg';
 import PaintRoller from '@assets/img/paint-roller.svg';
@@ -17,11 +17,12 @@ const suggestions = [
 
 const Suggestions = () => {
   return (
-    <SimpleGrid columns={2} spacing={11} p={4}>
-      {suggestions.map((suggestion, index) => (
-        <SuggestionCard key={index} {...suggestion} />
-      ))}
-    </SimpleGrid>
+    // <SimpleGrid columns={2} spacing={11} p={4}>
+    //   {suggestions.map((suggestion, index) => (
+    //     <SuggestionCard key={index} {...suggestion} />
+    //   ))}
+    // </SimpleGrid>
+    <div></div>
   );
 };
 
