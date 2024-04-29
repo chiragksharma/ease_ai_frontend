@@ -9,5 +9,15 @@
 .header-bar-container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between; /* Positions children at the ends */
+    align-items: center; /* Vertically centers children */
+    width: 100%; 
     gap: 10px;
+}
+.header-bar-container-left{
+   
+}
+.header-bar-container-right{
+    justify-content: flex-end;
+
 }

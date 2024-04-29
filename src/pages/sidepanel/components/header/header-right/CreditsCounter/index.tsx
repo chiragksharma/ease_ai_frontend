@@ -8,18 +8,15 @@ interface CreditsCounterProps {
 
 const CreditsCounter: React.FC<CreditsCounterProps> = ({ credits }) => {
   // Assuming a full circle at 15 credits, calculate degrees.
-  // Each credit represents 360 / 15 = 24 degrees.
-  const degrees = 360 - (credits / 15) * 360;
-    // Define your progress and track colors here
-   
+  const maxCredits = 15;
+  const degrees = (credits / maxCredits) * 360;  // Full circle is 360 degrees   
   
   return (
     <div className={styles['credits-counter']}>
       <div className={styles['credits-counter__number']}>{credits}</div>
-      <div className={styles['credits-counter__progress']} style={{ transform: `rotate(${degrees}deg)` }}>
+      <div className={styles['credits-counter__progress-bar']} style={{ transform: `rotate(${degrees - 90}deg)` }}>
         <div className={`${styles['credits-counter__progress-bar']}::after`}></div>
       </div>
-       
     </div>
   );
 };

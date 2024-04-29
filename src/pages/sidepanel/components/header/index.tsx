@@ -9,8 +9,12 @@ const Header=({toggleTheme})=>{
     return(
         <div className="header-bar">
             <div className="header-bar-container">
-            <ProfileIcon imageUrl="https://i.pinimg.com/474x/c8/7b/9d/c87b9d54fd605e1f80074974bfd218b8.jpg" />
-            <HeaderRight credits={credits}/>
+            <div className="header-bar-container-left">
+                <ProfileIcon imageUrl="https://i.pinimg.com/474x/c8/7b/9d/c87b9d54fd605e1f80074974bfd218b8.jpg" />
+            </div>
+            <div className="header-bar-container-right">
+                <HeaderRight credits={credits}/>
+            </div>
 
             </div>
         </div>

@@ -1,0 +1,26 @@
+/* ToggleButton.module.css */
+#toggle {
+    width: 39px;
+    height: 22px; /* Added for a fixed height of the toggle button */
+    display: flex;
+    align-items: center; /* Centers the inner toggle circle */
+    padding: 5px;
+    background-color: #1a202c;
+    border-radius: 1000px;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px -10px #000000;
+    transition: background-color 0.2s ease-in;
+  }
+  
+  .toggle-inner {
+    width: 20px;
+    height: 20px; /* Adjusted for a proper circle appearance */
+    background-color: white;
+    border-radius: 1000px;
+    transition: transform 0.2s ease-in;
+  }
+  
+  .toggle-active {
+    transform: translateX(20px); /* Adjusted for the toggling effect */
+  }
+  

@@ -1,25 +1,13 @@
+@use 'sass:math';
+@import '@pages/sidepanel/styles/variables';
+
 @mixin themeable-background {
-    // background-color: $color-background-light;
-    // @media (prefers-color-scheme: dark) {
-    //   background-color: $color-background-dark;
-    // }
-    &.theme-light {
-        background-color: $color-background-light;
-      }
-      &.theme-dark {
-        background-color: $color-background-dark;
-      }
+    background-color: var(--color-background);
   }
   
-  @mixin themeable-text {
-    // color: $color-text-light;
-    &.theme-light {
-        color: $color-text-light;
-      }
-      &.theme-dark {
-        color: $color-text-dark;
-      }
-  }
+@mixin themeable-text {
+    color: var(--color-text);
+}
   
   @mixin flex-center {
     display: flex;
