@@ -3,6 +3,7 @@ import CreditsCounter from '@pages/sidepanel/components/header/header-right/Cred
 import ToggleButton from '@pages/sidepanel/components/header/header-right/ToggleDarkMode';
 
 import SettingsIcon from '@assets/img/settings-icon.svg';
+import SettingIconWhite from "@assets/img/settings_white.svg";
 
 import '@pages/sidepanel/components/header/header-right/header-right.scss';
 
@@ -14,7 +15,11 @@ const headerRight  = ({toggleTheme,theme}) => {
         <CreditsCounter credits={15} />
         <ToggleButton  onToggle={toggleTheme} theme={theme} />
         <div className='header-right-settings-icon'>
-            <img src={chrome.runtime.getURL(SettingsIcon)} alt="settings-icon" className='settings-icon'/>
+            <img 
+                src={theme ? chrome.runtime.getURL(SettingIconWhite) : chrome.runtime.getURL(SettingsIcon)} 
+                alt="settings-icon" 
+                className='settings-icon'
+            />
         </div>
       </div>
     );
