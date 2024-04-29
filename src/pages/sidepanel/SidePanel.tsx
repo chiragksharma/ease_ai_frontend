@@ -13,6 +13,8 @@ import { ThemeProvider } from 'styled-components';
 import { useTheme } from '@pages/sidepanel/hooks/useTheme';
 import { lightTheme, darkTheme } from '@pages/sidepanel/styles/themes';
 import GlobalStyle from '@pages/sidepanel/styles/globalStyle';
+import SidePanelContainer from '@pages/sidepanel/styled/SidePanelContainer'; // This is the styled component
+
 import '@pages/sidepanel/SidePanel.scss';
 
 const SidePanel: React.FC = () => {
@@ -21,8 +23,8 @@ const SidePanel: React.FC = () => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      <div className="side-panel">
-        <Header toggleTheme={toggleTheme} />
+      <div className={`side-panel ${theme === 'dark' ? 'dark-theme' : ''}`}>
+        <Header toggleTheme={toggleTheme} theme={theme=== 'dark'} />
         <div className="suggestions">
           <Suggestions />
         </div>

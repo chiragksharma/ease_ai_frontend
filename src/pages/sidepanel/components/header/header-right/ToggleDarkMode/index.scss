@@ -13,11 +13,11 @@
     display: flex; // To align the SVG icon
     //justify-content: center; // Center the icon horizontally
 }
-.dark-mode {
+.dark {
     background-color: #1E1E1E;
   }
 
-  .light-mode {
+  .light {
     background-color: #7FABFF;
   }
 
@@ -28,7 +28,7 @@
     background-color: transparent;
   }
 
-  .dark-mode .toggle-icon {
+  .dark .toggle-icon {
     transform: translateX(20px); // Moves the icon to the right when dark mode is active
   }
   

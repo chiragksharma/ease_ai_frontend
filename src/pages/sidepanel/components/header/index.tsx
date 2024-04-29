@@ -4,7 +4,7 @@ import HeaderRight from "@pages/sidepanel/components/header/header-right/index";
 import '@pages/sidepanel/components/header/index.scss';
 
 
-const Header=({toggleTheme})=>{
+const Header=({toggleTheme,theme})=>{
     const credits = 15;
     return(
         <div className="header-bar">
@@ -13,7 +13,7 @@ const Header=({toggleTheme})=>{
                 <ProfileIcon imageUrl="https://i.pinimg.com/474x/c8/7b/9d/c87b9d54fd605e1f80074974bfd218b8.jpg" />
             </div>
             <div className="header-bar-container-right">
-                <HeaderRight credits={credits}/>
+                <HeaderRight toggleTheme={toggleTheme} theme={theme}/>
             </div>
 
             </div>

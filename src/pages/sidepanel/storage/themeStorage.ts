@@ -17,7 +17,9 @@ const themeStorage: ThemeStorage = {
   set: (theme: string) => {
     // Wrap chrome.storage.local.set in a Promise
     return new Promise((resolve) => {
+
       chrome.storage.local.set({ [THEME_KEY]: theme }, () => {
+        console.log("Theme is being set in the local storage: ",THEME_KEY,theme);
         resolve(); // Resolve the promise after setting the value
       });
     });
