@@ -1,4 +1,7 @@
 @use 'sass:math';
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
+
 // Base size of the component
 $size: 35px;
 
@@ -24,7 +27,7 @@ $text-color: #FFFFFF;
     z-index: 1;
     color: #FFF;
     text-align: center;
-    font-family: Manrope;
+    font-family: $font-primary;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
