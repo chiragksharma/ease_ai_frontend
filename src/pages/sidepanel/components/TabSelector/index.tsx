@@ -13,8 +13,8 @@ const TabSelector: React.FC<TabSelectorProps> = () => {
     const tabs = ['Tools', 'AI Coach', 'My Channel'];
   
     const updateHighlight = (element) => {
-        const extraOffset = 7; // Adjust this value based on your specific CSS if needed
-        const buttonPadding = 14; // Adjust if your button padding affects highlight sizing
+        const extraOffset = 2; // Adjust this value based on your specific CSS if needed
+        const buttonPadding = 2; // Adjust if your button padding affects highlight sizing
       setHighlightStyle({
         left: `${element.offsetLeft- extraOffset}px`,
         width: `${element.offsetWidth+ buttonPadding}px`
