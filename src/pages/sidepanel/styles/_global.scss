@@ -1,0 +1,44 @@
+// This file will contain global styles that are injected by the GlobalStyle component
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  @include themeable-background;
+  @include themeable-text;
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  background-color: $color-background-light;
+  color: $color-text-light;
+  @include flex-center;
+  
+  @include respond-to(md) {
+    font-size: 0.9rem;
+  }
+
+  @include respond-to(sm) {
+    font-size: 0.8rem;
+  }
+}
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+}
+
+button {
+  font-family: $font-primary;
+}
+
+// Example of using a mixin
+@include themeable-background;

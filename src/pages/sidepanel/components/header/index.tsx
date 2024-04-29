@@ -1,21 +1,18 @@
 import React from "react";
-
+import ProfileIcon from "@pages/sidepanel/components/header/profile-icon/index";
+import HeaderRight from "@pages/sidepanel/components/header/header-right/index";
 import '@pages/sidepanel/components/header/index.scss';
 
-const Header=()=>{
-    
+
+const Header=({toggleTheme})=>{
+    const credits = 15;
     return(
         <div className="header-bar">
-        <div className="navbar">
-        {/* <Box bg='transparent' w='100%' p={4} color='black'>
-            Ease.ai
-        </Box> */}
-        </div>
-        <div className="header-message">
-        {/* <Box bg='#ececec' w='90%' p={10} color='black' borderRadius='5px' borderWidth='1px' fontWeight='400' fontSize='small' display='flex' >
-        Type / to access 100+ commands, e.g. /summary and /compose. Use parameters like this. I can read Web & PDF content in page-aware mode.
-        </Box> */}
-        </div>
+            <div className="header-bar-container">
+            <ProfileIcon imageUrl="https://i.pinimg.com/474x/c8/7b/9d/c87b9d54fd605e1f80074974bfd218b8.jpg" />
+            <HeaderRight credits={credits}/>
+
+            </div>
         </div>
     )
 }

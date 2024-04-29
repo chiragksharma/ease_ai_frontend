@@ -9,28 +9,28 @@ import withErrorBoundary from '@src/shared/hoc/withErrorBoundary';
 import Header from '@pages/sidepanel/components/header';
 import Suggestions from '@pages/sidepanel/components/suggestion-cards/index';
 import ChatInput from '@pages/sidepanel/components/ChatInput';
+import { ThemeProvider } from 'styled-components';
+import { useTheme } from '@pages/sidepanel/hooks/useTheme';
+import { lightTheme, darkTheme } from '@pages/sidepanel/styles/themes';
+import GlobalStyle from '@pages/sidepanel/styles/globalStyle';
+import '@pages/sidepanel/SidePanel.scss';
 
-
-const SidePanel = () => {
-  const theme = useStorage(exampleThemeStorage);
-
+const SidePanel: React.FC = () => {
+  const [theme, toggleTheme] = useTheme(); // Custom hook to get and set the theme
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor:'white',
-      }}>
-        {/* <style>{css}</style> */}
-        <header>
-        <Header/>
-        <div className='suggestions'>
-        <Suggestions/>
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyle />
+      <div className="side-panel">
+        <Header toggleTheme={toggleTheme} />
+        <div className="suggestions">
+          <Suggestions />
         </div>
-        <div className='chatInput'>
-          <ChatInput/>
+        <div className='chat-input'>
+          <ChatInput />
         </div>
-      </header>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 };
 

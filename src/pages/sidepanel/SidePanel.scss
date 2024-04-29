@@ -1,49 +1,43 @@
-.App {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  /* height: 100%; */
-  /* padding: 10px; */
-  background-color: #282c34;
-}
+// Import variables and mixins for use in the component styles
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
 
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  height: 100%;
+// Base styles for the side panel
+.side-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  background-color: $color-background;
+  color: $color-text;
+  height: 100%;
+  width: 100%;
 
-.App-link {
-  color: #61dafb;
-}
+  // Dynamic theming can be handled using mixins or functions
+  @include themeable-background();
+  @include themeable-text();
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .suggestions, .chat-input {
+    padding: 1rem;
   }
 }
+// .App {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   text-align: center;
+//   /* height: 100%; */
+//   /* padding: 10px; */
+//   background-color: #282c34;
+// }
 
-.suggestions{
-  padding: 15px;
-}
+// .App-logo {
+//   height: 30vmin;
+//   pointer-events: none;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }

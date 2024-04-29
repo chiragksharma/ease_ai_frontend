@@ -1,0 +1,22 @@
+// Color Palette
+$color-primary: #0A1330;
+$color-secondary: #E6E6E6;
+$color-accent: #FFC107;
+$color-background-light: #F7F8FC;
+$color-background-dark: #0A1330;
+$color-text-light: #121111;
+$color-text-dark: #FFFFFF;
+
+// Fonts
+$font-primary: 'Manrope';
+$font-secondary: 'Poppins';
+
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// General or default theme colors
+$color-background: $color-background-light; // Default to light theme
+$color-text: $color-text-light; // Default to light theme
