@@ -10,6 +10,7 @@ const themeStorage: ThemeStorage = {
     // Wrap chrome.storage.local.get in a Promise
     return new Promise((resolve) => {
       chrome.storage.local.get([THEME_KEY], (result) => {
+        console.log("Theme being GET from the local storage: ",result[THEME_KEY]);
         resolve(result[THEME_KEY] || null); // Return the stored value or null
       });
     });

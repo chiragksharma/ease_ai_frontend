@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "icon":"Analyze_Video", 
+      "name": "Thumbnail Analyzer",
+      "description": "Analyzes the thumbnail of a YouTube video for effectiveness.",
+      "tags": ["analytics", "thumbnail"],
+      "category": "Analysis",
+      "inputFields": [
+        {
+          "type": "text",
+          "placeholder": "Enter video URL"
+        }
+      ],
+      "actions": [
+        {
+          "name": "Calculate",
+          "endpoint": "/calculateRevenue"
+        }
+      ]
+    } ,
+    {
+        "id": "2",
+        "icon":"Comment", 
+        "name": "Comment On Video",
+        "description": "Comments on the video based on the youtube video title and description and your customized tone",
+        "tags": ["comment", "video"],
+        "category": "Comment",
+        "inputFields": [
+          {
+            "type": "text",
+            "placeholder": "Tone"
+          }
+        ],
+        "actions": [
+          {
+            "name": "Comment",
+            "endpoint": "/comment"
+          }
+        ]
+      } 
+]
+  

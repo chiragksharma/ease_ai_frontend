@@ -9,6 +9,7 @@ export const useTheme = (): [string,() =>  Promise<void>] => {
     (async () => {
       try {
         const storedTheme = await themeStorage.get();
+        console.log("This is the stored theme: ",storedTheme);
         // If storedTheme is null or undefined, default to 'light'
         setTheme(storedTheme || 'light');
       } catch (error) {
@@ -20,6 +21,7 @@ export const useTheme = (): [string,() =>  Promise<void>] => {
   
   const toggleTheme = async () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
+    console.log("Toggling theme from", theme, "to", newTheme);
     await themeStorage.set(newTheme);
     setTheme(newTheme);
   };

@@ -21,6 +21,15 @@
     --tabsNavigation-bg-light: #FFFFFF;
     --tabsNavigation-active-tab-light:#E6EBEC;
     --tabsNavigation-active-tab-text-light:#151313;
+
+    // Cards Theme
+    --cards-bg-light: #FEFFFF;
+    --cards-title-text-color: #121111;
+    --cards-main-icon-color: #161616;
+    --cards-boundary: 0.5px solid #EDEDED;
+    --cards-description-color: #333333;
+
+
   }
   
   // Define the dark theme colors as CSS variables
@@ -37,6 +46,15 @@
      --tabsNavigation-bg-light: rgba(87, 93, 255, 0.2);
      --tabsNavigation-active-tab-light:#0A1330;
      --tabsNavigation-active-tab-text-light:rgb(255, 255, 255);
+
+     // Cards Dark Theme
+     --cards-bg-light: #0B1739;
+     --cards-title-text-color: #FFFFFF;
+     --cards-main-icon-color: #E8E8E8;
+     --cards-boundary: 1px solid #343B4F;
+     --cards-description-color: #969696;
+
+
 }
 
 

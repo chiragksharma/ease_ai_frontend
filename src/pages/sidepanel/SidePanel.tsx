@@ -10,6 +10,7 @@ import Header from '@pages/sidepanel/components/header';
 import Suggestions from '@pages/sidepanel/components/suggestion-cards/index';
 import ChatInput from '@pages/sidepanel/components/ChatInput';
 import TabSelector from '@pages/sidepanel/components/TabSelector';
+import CardContainer from '@pages/sidepanel/components/cards/CardContainer';
 import { ThemeProvider } from 'styled-components';
 import { useTheme } from '@pages/sidepanel/hooks/useTheme';
 import { lightTheme, darkTheme } from '@pages/sidepanel/styles/themes';
@@ -28,6 +29,9 @@ const SidePanel: React.FC = () => {
         <Header toggleTheme={toggleTheme} theme={theme=== 'dark'} />
         <div className='tabs-selector-container'>
             <TabSelector/>
+        </div>
+        <div className='cards'>
+          <CardContainer/>
         </div>
         <div className="suggestions">
           <Suggestions />
