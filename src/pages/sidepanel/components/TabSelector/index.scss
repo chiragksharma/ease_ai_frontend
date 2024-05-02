@@ -55,6 +55,16 @@
     transition: left 0.3s ease, width 0.3s ease; // Smooth transition for moving and resizing highlight
     z-index: 0; // Keep below the text for better visibility
   }
+  .tabs-conatiner{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
+}
 //   .button-bar-item:hover {
 //     background: rgba(134, 130, 251, 0.2); // Light background on hover
 //     border-radius: 40px;

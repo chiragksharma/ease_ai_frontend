@@ -33,7 +33,7 @@
           }
         ],
         "actions": [
-          {
+           {
             "name": "Comment",
             "endpoint": "/comment"
           }
