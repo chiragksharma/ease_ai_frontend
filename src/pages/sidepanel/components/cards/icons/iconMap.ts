@@ -1,18 +1,15 @@
 // src/icons/iconMap.js
 
 import logo from "@assets/img/logo.svg";
-import commentLight from "@assets/img/Comment_White_15x15.svg";
-import commentDark from "@assets/img/Comment_Black_15x15.svg";
-import repurposeIconLight from "@assets/img/Roller_white_15x15.svg";
-import repurposeIconDark from "@assets/img/Roller_Black_15x15.svg";
-import AnalyzeIconLight from "@assets/img/Analysis_White_15x15.svg";
-import AnalyzeIconDark from "@assets/img/Analysis_Black_15x15.svg";
+ import comment from "@assets/img/Comment_15x15.svg";
+ import repurpose from "@assets/img/roller_15x15.svg";
+ import Analyze from "@assets/img/Analysis_15X15.svg";
 
 
 const iconMap = {
-    Comment: [commentDark, commentLight],
-    Repurpose: [repurposeIconDark, repurposeIconLight],
-    Analyze_Video: [AnalyzeIconDark, AnalyzeIconLight],
+    Comment: comment,
+    Repurpose: repurpose,
+    Analyze_Video: Analyze,
   };
 
 export default iconMap;
