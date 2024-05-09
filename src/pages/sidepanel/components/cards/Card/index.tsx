@@ -8,14 +8,14 @@ import "@pages/sidepanel/components/cards/Card/index.scss";
 interface CardComponentProps extends CardInterface {}
 
 const CardComponent: React.FC<CardComponentProps> = (props) => {
-  const { name,icon ,description, inputFields, tags, category } = props;
+  const { name,icon ,description, inputFields, tags, category,onClick } = props;
   const [theme] = useTheme();
   console.log("Current Theme: ",theme)
 
   const Icon = iconMap[icon];
 
   return (
-    <div className="card">
+    <div className="card" onClick={onClick}>
     <div className='card-title-section'>
         <div className='card-icon'>
           <img src={Icon} alt={`${name} icon`}/>

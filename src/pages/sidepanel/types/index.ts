@@ -20,6 +20,7 @@ export interface InputField {
     tags: string[];
     category: string;
     actions?: Action[]; // Ensure actions are defined if used in your cards
+    onClick: ()=> void;
     // ... any other properties for Card
   }
 
