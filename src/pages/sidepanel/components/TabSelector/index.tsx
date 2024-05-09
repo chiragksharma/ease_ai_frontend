@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '@pages/sidepanel/components/TabSelector/index.scss'; // Make sure to create a corresponding CSS file
-
+import { CardProvider } from '@pages/sidepanel/context/activeCard';
 // Three components
 import AICoach from '@pages/sidepanel/components/ai_Coach';
 import ToolsSection from '@pages/sidepanel/components/Tools';
@@ -46,6 +46,7 @@ const TabSelector: React.FC<TabSelectorProps> = () => {
   
     return (
         <div className='tabs-conatiner'>
+            <CardProvider>
             <div className="tabs-button-bar" onMouseOut={() => updateHighlight(document.querySelector('.button-bar-item.active'))}>
                 <div className="highlight" style={highlightStyle}></div>
                 {tabs.map(tab => (
@@ -62,6 +63,7 @@ const TabSelector: React.FC<TabSelectorProps> = () => {
             <div className="tab-content">
                 {getActiveComponent()}
             </div>
+            </CardProvider>
         </div>
     );
   };

@@ -30,9 +30,7 @@ const SidePanel: React.FC = () => {
         <div className='tabs-selector-container'>
             <TabSelector/>
         </div>
-        {/* <div className='cards'>
-          <CardContainer/>
-        </div> */}
+       
         <div className="suggestions">
           <Suggestions />
         </div>
