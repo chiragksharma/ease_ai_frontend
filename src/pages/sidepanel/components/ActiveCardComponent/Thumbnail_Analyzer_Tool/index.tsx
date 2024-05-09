@@ -5,7 +5,13 @@ import "@pages/sidepanel/components/ActiveCardComponent/Thumbnail_Analyzer_Tool/
 
 
 const ThumbnailAnalysisComponent = ({ card }) => {
-    const tags = ['Chill', 'Calm', 'Funny', 'Ask', 'Appreciate']
+    const tags = [
+        { name: 'Chill', icon: '🧊' },
+        { name: 'Calm', icon: '🌊' },
+        { name: 'Funny', icon: '🤣' },
+        { name: 'Ask', icon: '❓' },
+        { name: 'Appreciate', icon: '👏' }
+    ];
     const title = "Tones"
     const children = <SmallTagCards tags={tags}/>
     return (
