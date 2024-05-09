@@ -4,6 +4,7 @@
       "icon":"Analyze_Video", 
       "name": "Thumbnail Analyzer",
       "description": "Analyzes the thumbnail of a YouTube video for effectiveness.",
+      "type": "video_analyzer",
       "tags": ["analytics", "thumbnail"],
       "category": "Analysis",
       "inputFields": [
@@ -24,6 +25,7 @@
         "icon":"Comment", 
         "name": "Comment On Video",
         "description": "Comments on the video based on the youtube video title and description and your customized tone",
+        "type": "video_comment",
         "tags": ["comment", "video"],
         "category": "Comment",
         "inputFields": [

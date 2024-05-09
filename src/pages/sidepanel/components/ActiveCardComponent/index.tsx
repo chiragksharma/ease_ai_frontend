@@ -1,10 +1,21 @@
 import React from 'react';
 import backButton from "@assets/img/chevron-left.svg";
 import "@pages/sidepanel/components/ActiveCardComponent/index.scss";
+import ThumbnailAnalysisComponent from '@pages/sidepanel/components/ActiveCardComponent/Thumbnail_Analyzer_Tool';
 import { useCardContext } from '@pages/sidepanel/context/activeCard';
+
+
+
+const cardComponents = {
+    'video_analyzer': ThumbnailAnalysisComponent,
+    // 'video-effectiveness': VideoEffectivenessComponent,
+    // Add more mappings as needed
+};
 
 const ActiveCardComponent = () => {
     const { activeCard, deactivateCard } = useCardContext();
+    const CardSpecificComponent = cardComponents[activeCard.type] || (() => <div>No component available for this type</div>);
+
 
     return (
         <div className="active-card">
@@ -15,6 +26,9 @@ const ActiveCardComponent = () => {
                 <div className='active-card-header-title'>
                   {activeCard.name}
                 </div>
+            </div>
+            <div className='active-card-component'>
+                <CardSpecificComponent card={activeCard} />
             </div>
         </div>
     );

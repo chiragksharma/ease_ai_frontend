@@ -16,6 +16,7 @@ export interface InputField {
     name: string;
     icon: string;
     description: string;
+    type: string;
     inputFields: InputField[];
     tags: string[];
     category: string;
@@ -29,6 +30,7 @@ export interface InputField {
     icon: string;
     name: string;
     description: string;
+    type: string;
     tags: string[];
     category: string;
     inputFields: InputField[];

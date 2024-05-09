@@ -22,6 +22,7 @@ const CardContainer: React.FC = () => {
           icon = {card.icon}
           name={card.name}
           description={card.description}
+          type={card.type}
           inputFields={card.inputFields}
           tags={card.tags}
           category={card.category}
