@@ -1,0 +1,26 @@
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
+
+.small-tag-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; // Spacing between buttons
+  }
+  
+  .tag-button {
+    padding: 9px 11px;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid #343B4F;
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      border: 1px solid #CFCECE; // Darken the button on hover
+      background-color: var(--small-tag-cards-bg-hover)
+    }
+  }
+  

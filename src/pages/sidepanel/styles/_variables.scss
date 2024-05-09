@@ -27,7 +27,17 @@
     --cards-title-text-color: #121111;
     --cards-main-icon-color: #161616;
     --cards-boundary: 0.5px solid #EDEDED;
+    --cards-boundary-color: #EDEDED;
     --cards-description-color: #333333;
+
+    //Outline Card theme
+    --outline-title-color: #151313;
+    --outline-card-border: 1px solid #cdcdcd;
+    --outline-card-border-color: #EDEDED;
+    --outline-card-description-color: #333333;
+    
+    //small cards
+    --small-tag-cards-bg-hover: #EDEDED;
 
 
   }
@@ -36,7 +46,7 @@
 .dark-theme {
     --color-background: #0A1330; 
     --color-text: #FFFFFF; 
-    --color-text-secondary:#b6b6b6 ; 
+    --color-text-secondary:#CFCECE ; 
 
     //credit counter component specific
     --creditcounter-bg-light: #091128;
@@ -52,8 +62,17 @@
      --cards-title-text-color: #FFFFFF;
      --cards-main-icon-color: #E8E8E8;
      --cards-boundary: 1px solid #343B4F;
+     --cards-boundary-color: #343B4F;
      --cards-description-color: #6B7280;
 
+     //Outline Card theme
+    --outline-title-color: #CFCECE;
+    --outline-card-border: 0.5px solid #EDEDED;
+    --outline-card-border-color: #EDEDED;
+    --outline-card-description-color: #333333;
+  
+    //small cards
+    --small-tag-cards-bg-hover: #1b2236;
 
 }
 

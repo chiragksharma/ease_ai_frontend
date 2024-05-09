@@ -2,6 +2,7 @@
 @import '@pages/sidepanel/styles/variables';
 
 .active-card{
+    gap: 19px;
     display:flex;
     flex-direction: column;
     height: 100%;
@@ -16,6 +17,7 @@
     align-items: center;
 }
 .active-card-component{
+    margin-top: 20px;
     display: flex;
     width: 100%;
 }

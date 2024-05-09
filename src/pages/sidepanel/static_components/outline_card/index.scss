@@ -1,0 +1,29 @@
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
+
+
+.display-card-container{
+    display: flex;
+    width: 80%;
+    padding: 30px;
+    border-radius: 20px;
+    border: var(--cards-boundary);
+    background-color: var(--cards-bg-light);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.card-header{
+    color: var(--color-text-secondary);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.divider-line{
+    width: 100%;
+    height: 1px; 
+    background-color: var(--cards-boundary-color); 
+    margin: 6px 0; 
+}
