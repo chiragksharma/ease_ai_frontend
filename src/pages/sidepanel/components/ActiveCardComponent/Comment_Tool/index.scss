@@ -1,4 +1,6 @@
 .tones-display-card-container{
     display: flex;
+    flex-direction: column;
+    gap: 14px;
     width: 100%;
 }
