@@ -13,7 +13,7 @@ const ThumbnailAnalysisComponent = ({ card }) => {
         { name: 'Appreciate', icon: '👏' }
     ];
     const title = "Tones"
-    const children = <SmallTagCards tags={tags}/>
+    const children = <SmallTagCards tags={tags} onTagClick={()=> {}}/>
     return (
     <div className='tones-display-card-container'>
         {/* Implementation specific to Thumbnail Analysis */}

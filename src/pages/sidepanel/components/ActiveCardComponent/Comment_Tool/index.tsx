@@ -22,6 +22,17 @@ const VideoComment = ({ card }) => {
         });
     }; 
 
+    const handleTagClick = (tag) => {
+        // Update the ActiveCard with the selected tag
+        updateActiveCard({
+            subcomponents: {
+                ...ActiveCard.subcomponents,
+                selectedButtonValue: tag.name  // Storing tag name as selected value
+            }
+        });
+        console.log(`Tag selected: ${tag.name}`);
+    };
+
     const tags = [
         { name: 'Chill', icon: '🧊' },
         { name: 'Calm', icon: '🌊' },
@@ -30,7 +41,7 @@ const VideoComment = ({ card }) => {
         { name: 'Appreciate', icon: '👏' }
     ];
     
-    const small_tag_cards = <SmallTagCards tags={tags} />
+    const small_tag_cards = <SmallTagCards tags={tags} onTagClick={handleTagClick} />
     const video_details = "Title"
     const custom_instructions = <InputField placeholder='Enter Custom Instruction' value={ActiveCard.subcomponents.inputFieldValue1 || ''} onChange={handleInputChange}/>
     return (

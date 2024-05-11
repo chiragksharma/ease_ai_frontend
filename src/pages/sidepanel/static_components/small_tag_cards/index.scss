@@ -22,5 +22,14 @@
       border: 1px solid #CFCECE; // Darken the button on hover
       background-color: var(--small-tag-cards-bg-hover)
     }
+    &:active {
+        transform: scale(0.95); // Slight push effect on click
+    }
+
+    &.selected {
+        background-color: var(--small-tag-cards-bg-selected); // Change the background for selected tags
+        color: var(--color-text);
+        border: 1px solid #CFCECE;
+    }
   }
   
