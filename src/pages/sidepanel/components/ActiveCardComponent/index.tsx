@@ -4,6 +4,7 @@ import "@pages/sidepanel/components/ActiveCardComponent/index.scss";
 import ThumbnailAnalysisComponent from '@pages/sidepanel/components/ActiveCardComponent/Thumbnail_Analyzer_Tool';
 import VideoComment from '@pages/sidepanel/components/ActiveCardComponent/Comment_Tool';
 import { useCardContext } from '@pages/sidepanel/context/activeCard';
+import { ActiveCardProvider } from '@pages/sidepanel/context/storageUpdateContext';
 
 
 
@@ -20,6 +21,7 @@ const ActiveCardComponent = () => {
 
 
     return (
+        <ActiveCardProvider activeCard={activeCard}>
         <div className="active-card">
             <div className='active-card-header'>
                 <div className='ative-card-back-icon' onClick={deactivateCard}>
@@ -33,6 +35,7 @@ const ActiveCardComponent = () => {
                 <CardSpecificComponent card={activeCard} />
             </div>
         </div>
+        </ActiveCardProvider>
     );
 };
 
