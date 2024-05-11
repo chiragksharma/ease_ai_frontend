@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState,useEffect } from 'react';
 // Define the type for the context value
 type ActiveCardContextType = {
     ActiveCard: {
@@ -46,7 +46,23 @@ export const ActiveCardProvider = ({ children,activeCard }) => {
             selectedButtonValue: '', 
         },
     });
+
     console.log("This is the active card name: ",ActiveCard)
+    useEffect(() => {
+        // Load saved state from Chrome storage
+        chrome.storage.local.get(['ActiveCard'], function(result) {
+            if (result.ActiveCard) {
+                setActiveCard(result.ActiveCard);
+                console.log("loaded values: ",result.ActiveCard);
+            }
+        });
+    }, []);
+
+    useEffect(() => {
+        // Save the state to Chrome storage whenever it changes
+        chrome.storage.local.set({ ActiveCard });
+        console.log("Values stored in chrome storage: ",ActiveCard);
+    }, [ActiveCard]);
     // Function to update the active card details
     const updateActiveCard = (updates) => {
         setActiveCard((prev) => ({ ...prev, ...updates }));

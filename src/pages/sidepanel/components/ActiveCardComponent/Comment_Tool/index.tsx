@@ -32,7 +32,7 @@ const VideoComment = ({ card }) => {
     
     const small_tag_cards = <SmallTagCards tags={tags} />
     const video_details = "Title"
-    const custom_instructions = <InputField placeholder='Enter Custom Instruction' onChange={handleInputChange}/>
+    const custom_instructions = <InputField placeholder='Enter Custom Instruction' value={ActiveCard.subcomponents.inputFieldValue1 || ''} onChange={handleInputChange}/>
     return (
     <div className='tones-display-card-container'>   
         <OutlineDisplayCard title="Video Description" children={video_details} />     
