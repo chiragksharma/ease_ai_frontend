@@ -20,20 +20,20 @@ const handlers = {
     });
   },
   video_comment: async (message, sender) => {
-    // const apiEndpoint = 'https://example.com/api/videos';
+    const apiEndpoint = 'http://127.0.0.1:5000/comment';
     const payload = message.data;
     console.log("This is the data",message.data)
-    // try {
-    //   const response = await fetch(apiEndpoint, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(payload)
-    //   });
-    //   const result = await response.json();
-    //   console.log('Video comment processed:', result);
-    // } catch (error) {
-    //   console.error('Error sending video comment data:', error);
-    // }
+    try {
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      console.log('Video comment processed:', result);
+    } catch (error) {
+      console.error('Error sending video comment data:', error);
+    }
   },
 
 };

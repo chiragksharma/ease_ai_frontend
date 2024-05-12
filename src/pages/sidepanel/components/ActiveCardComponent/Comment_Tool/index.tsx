@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useRef} from 'react';
 import OutlineDisplayCard from '@pages/sidepanel/static_components/outline_card';
 import SmallTagCards from '@pages/sidepanel/static_components/small_tag_cards';
 import Button from '@pages/sidepanel/static_components/button';
@@ -12,6 +12,26 @@ const VideoComment = ({ card }) => {
     const { ActiveCard, updateActiveCard } = useActiveCard();
     const [videoTitle, setVideoTitle] = useState('');
     const [channelName, setChannelName] = useState('');
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleGenerateClick = () => {
+        
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            console.log("This is inside the tabs query");
+            chrome.tabs.sendMessage(tabs[0].id, {
+                action: "moveAndType",
+                selector: "ytd-comment-simplebox-renderer", // Adjust the selector as needed
+                text: "Hello, this is a test comment!"
+            }, response => {
+                if (response) {
+                    console.log(response.status);
+                } else {
+                    console.log('No response received.');
+                }
+            });
+        });
+        
+    };
     useEffect(() => {
         // Function to fetch video details from YouTube page
         const fetchVideoDetails = () => {
@@ -50,7 +70,7 @@ const VideoComment = ({ card }) => {
             card_title: card.title,
             card_description: card.description,
             video_title: videoTitle, 
-            video_description: channelName,
+            channel_name: channelName,
             prompt: {
                 inputField: ActiveCard.subcomponents.inputFieldValue1,
                 selectedButton: ActiveCard.subcomponents.selectedButtonValue,
@@ -107,7 +127,7 @@ const VideoComment = ({ card }) => {
         <OutlineDisplayCard title="Video Description" children={video_details} />     
         <OutlineDisplayCard title="Custom Instructions" children={custom_instructions} />
         <OutlineDisplayCard title="Tone of the comment" children={small_tag_cards} />
-        <Button title='Generate' onClick={sendDataToBackground} />
+        <Button title='Generate' onClick={handleGenerateClick} />
     </div>
 );
 };

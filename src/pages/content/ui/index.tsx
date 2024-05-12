@@ -6,7 +6,7 @@ import refreshOnUpdate from 'virtual:reload-on-update-in-view';
 refreshOnUpdate('pages/content');
 
 const root = document.createElement('div');
-root.id = 'chrome-extension-boilerplate-react-vite-content-view-root';
+root.id = 'Ease-ai-root';
 
 document.body.append(root);
 
@@ -16,10 +16,14 @@ rootIntoShadow.id = 'shadow-root';
 const shadowRoot = root.attachShadow({ mode: 'open' });
 shadowRoot.appendChild(rootIntoShadow);
 
+
 /** Inject styles into shadow dom */
 // const styleElement = document.createElement('style');
 // styleElement.innerHTML = injectedStyle;
 // shadowRoot.appendChild(styleElement);
+
+/** Injecting the script tag */
+
 
 
 createRoot(rootIntoShadow).render(
