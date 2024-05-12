@@ -12,9 +12,10 @@ const VideoComment = ({ card }) => {
     const { ActiveCard, updateActiveCard } = useActiveCard();
     const [videoTitle, setVideoTitle] = useState('');
     const [channelName, setChannelName] = useState('');
-    const inputRef = useRef<HTMLInputElement>(null);
+    const [isLoading,setIsLoading] = useState(false);
 
     const handleGenerateClick = () => {
+        setIsLoading(true);
         
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             console.log("This is inside the tabs query");
@@ -25,6 +26,7 @@ const VideoComment = ({ card }) => {
             }, response => {
                 if (response) {
                     console.log(response.status);
+                    setIsLoading(false);
                 } else {
                     console.log('No response received.');
                 }
@@ -127,7 +129,7 @@ const VideoComment = ({ card }) => {
         <OutlineDisplayCard title="Video Description" children={video_details} />     
         <OutlineDisplayCard title="Custom Instructions" children={custom_instructions} />
         <OutlineDisplayCard title="Tone of the comment" children={small_tag_cards} />
-        <Button title='Generate' onClick={handleGenerateClick} />
+        <Button title='Generate' onClick={handleGenerateClick} loading={isLoading} />
     </div>
 );
 };
