@@ -9,8 +9,9 @@
   gap: 10px;
   background-color: var(--color-background);
   color: var(--color-text);
-  height: 100%;
+  // height: 100%;
   width: 100%;
+  flex-grow: 1;
 
   // Dynamic theming can be handled using mixins or functions
   @include themeable-background();

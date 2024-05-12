@@ -14,18 +14,11 @@ const Button: React.FC<ButtonProps> = ({
     onClick = () => {}, // default to a no-op function if not provided
     loading,
 }) => {
-  const [isLoading, setIsLoading] = useState(loading);
   const loadingStyle = {
     height: 50,
     width: 50,
   };
-  const handleClick = () =>{
-    if (!isLoading) {
-      setIsLoading(true);
-      onClick();
-      // setTimeout(() => setIsLoading(false), 9000); // Loading effect for 1 second
-    }
-  }
+ 
   return (
  
     <div

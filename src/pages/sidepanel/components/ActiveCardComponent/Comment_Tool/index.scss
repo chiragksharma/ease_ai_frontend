@@ -1,6 +1,35 @@
+@import '@pages/sidepanel/styles/mixins';
+@import '@pages/sidepanel/styles/variables';
+
 .tones-display-card-container{
     display: flex;
     flex-direction: column;
     gap: 14px;
     width: 100%;
+}
+.video-details-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.video-title-container,.channel-name-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.tag-title{
+    color: var(--color-text);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.tag-content{
+    color: var(--cards-description-color);
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

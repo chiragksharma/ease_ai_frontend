@@ -6,7 +6,19 @@ import InputField from '@pages/sidepanel/static_components/input_field';
 import "@pages/sidepanel/components/ActiveCardComponent/Comment_Tool/index.scss"
 import { useActiveCard } from '@pages/sidepanel/context/storageUpdateContext';
 
-
+const DescriptionComponent = ({title,channel_name})=> {
+    return (
+        <div className='video-details-container'>
+            <div className='video-title-container'>
+                <span className='tag-title'>Title: </span>
+                <span className='tag-content'>{title}</span>
+            </div>
+            <div className='channel-name-container'>
+                <span className='tag-title'>Channel: </span>
+                <span className='tag-content'>{channel_name}</span>            </div>
+        </div>
+    )
+}
 
 const VideoComment = ({ card }) => {
     const { ActiveCard, updateActiveCard } = useActiveCard();
@@ -122,7 +134,7 @@ const VideoComment = ({ card }) => {
     ];
     
     const small_tag_cards = <SmallTagCards tags={tags} onTagClick={handleTagClick} />
-    const video_details = videoTitle
+    const video_details = <DescriptionComponent title={videoTitle} channel_name={channelName}/>
     const custom_instructions = <InputField placeholder='Enter Custom Instruction' value={ActiveCard.subcomponents.inputFieldValue1 || ''} onChange={handleInputChange}/>
     return (
     <div className='tones-display-card-container'>   
